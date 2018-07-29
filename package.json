@@ -1,0 +1,28 @@
+{
+  "name": "geoWorxs",
+  "version": "1.0.0",
+  "description": " ",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "server": "node index.js",
+    "server_local": "SET NODE_ENV=local&&node index.js",
+    "server_develop": "SET NODE_ENV=development&& node index.js",
+    "server_staging": "SET NODE_ENV=staging&& node index.js"
+  },
+  "engines": {
+    "npm": ">3.0.0",
+    "node": "^6.2.2"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^6.1.4",
+    "colors": "^1.1.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "http": "0.0.0",
+    "log-timestamp": "*",
+    "nconf": "*"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,56 @@
+body {
+  font-weight: 100;
+}
+
+h1, h2, h3, h4, h5, h6, p, input {
+  font-weight: 100;
+}
+
+#map {
+  width: 100%;
+  height: 0px;
+  padding: 0px;
+}
+
+.pre-scrollable {
+    max-height: 340px;
+    overflow-y: scroll;
+}
+
+.sidebar{
+  padding: 0px;
+  height: 100%;
+}
+
+.content{
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+}
+.cover-map{
+  /* border: 2px solid gray; */
+}
+
+.header-box{
+  -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  background: #F9CE4E;
+  padding: 10px;
+  color: #FFF;
+  height: 60px;
+  border-bottom: 1px solid #eab914;
+  position: relative;
+  align-items: center;
+}
+
+.titlename{
+	font-size: 30px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    line-height: 30px;
+    font-weight: lighter;
+    text-align: center;
+    margin: 0px auto;
+    color: #c39302;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.3)
+}
