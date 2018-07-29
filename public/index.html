@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="lib/angular/ngDialog.min.css">
 <link rel="stylesheet" href="lib/angular/ngDialog-theme-default.min.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/sidebar.css">
 
 <script	src="lib/angular/angular.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0mVAoqSKvKHy7BGXfngqTeJaFXpheQ54&language=en&libraries=places"></script>
@@ -26,27 +27,31 @@
 			<!-- Side bar panel-->
             <div class="col-sm-4 col-md-4 col-lg-4 sidebar ">
 				<div class="wrapper-sidebar row">
-
 					<div class="header-box col-md-12">
 						<h2 class="titlename">geoWorx</h2>
 					</div>
-
 				</div>
-                
+				<div class="footer">
+					<button type="button" class="btn btn-primary btn-block" ng-click="addJob()">Add Job</button>
+				</div>
             </div>
             <!-- Map column -->
             <div class="col-sm-8 cover-map">
-               <div id="map"></div>
+               <div id="map">
+			   </div>
             </div>
   	</div>
 
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rsvp/4.8.3/rsvp.js"></script>
 <!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
 
 <!-- GeoFire -->
 <script src="https://cdn.firebase.com/libs/geofire/4.1.2/geofire.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.26.7/dist/sweetalert2.all.min.js"></script>
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/popper.min.js"></script>
 <script src="lib/bootstrap/bootstrap.min.js"></script>

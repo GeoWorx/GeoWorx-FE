@@ -30,7 +30,7 @@ mapApp.controller('MapController', function ($scope, $http, ngDialog) {
             zoom: 15,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         });
-
+        
         // Create a draggable circle centered on the map
         var circle = new google.maps.Circle({
             strokeColor: "#6D3099",
@@ -52,9 +52,42 @@ mapApp.controller('MapController', function ($scope, $http, ngDialog) {
             radius: radiusInKm
             });
         }, 10);
+
         google.maps.event.addListener(circle, "drag", updateCriteria);
 
     }
 
+    $scope.addJob = function(){
+        console.log("add job");
+        swal.mixin({
+            input: 'text',
+            confirmButtonText: 'Next &rarr;',
+            showCancelButton: true,
+            progressSteps: ['1', '2', '3']
+        }).queue([
+            {
+              title: 'Enter your job Title:',
+              text: 'Eg: Walk my dog!'
+            },{
+                title: 'Write discription about job:',
+                text: 'Eg: Walk my dog for an hour from 5:00 to 6:00'
+            },{
+                title: 'Incentive:',
+                text: 'Eg: I will pay $20 or I will give free meal'
+            }
+        ]).then((result) => {
+            if (result.value) {
+              swal({
+                title: 'All done!',
+                html:
+                  'Your answers: <pre><code>' +
+                    JSON.stringify(result.value) +
+                  '</code></pre>',
+                confirmButtonText: 'Lovely!'
+              })
+            }
+        })
+    }
 
 });
+

@@ -1,0 +1,14 @@
+.sidebar{
+    padding: 0px;
+    height: 56vw;
+}
+
+.footer{
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  padding: 0px;
+}
+
+
+
