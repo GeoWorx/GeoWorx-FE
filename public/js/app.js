@@ -118,5 +118,42 @@ mapApp.controller('MapController', function ($scope, $http, ngDialog) {
         })
     }
 
+    
+    /**********************/
+    /*  HELPER FUNCTIONS  */
+    /**********************/
+    /* Adds a marker for the inputted vehicle to the map */
+    function createVehicleMarker(job, jobColor) {
+        var marker = new google.maps.Marker({
+            icon: {
+                path: google.maps.SymbolPath.CIRCLE,
+                scale: 10
+                },
+            position: new google.maps.LatLng(job.lat, job.lon),
+            optimized: true,
+            map: $scope.map
+        });    
+
+        marker.content = `
+            <div class="infoWindowContent">
+                Hello
+            <div/>
+
+
+        `;
+        var infoWindow = new google.maps.InfoWindow();
+        google.maps.event.addListener(marker, 'click', function(){
+            infoWindow.setContent('<h3>' + marker.title + '</h3>' +  marker.content);
+            infoWindow.open($scope.map, marker);
+
+            if (marker.getAnimation() !== null) {
+            marker.setAnimation(null);
+            } else {
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+            }
+        });
+        return marker;
+    }
+
 });
 
