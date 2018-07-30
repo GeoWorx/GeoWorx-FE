@@ -4,7 +4,8 @@
 <meta charset="ISO-8859-1">
 <title>geoWorx</title>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/> -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 <link rel="stylesheet" href="lib/angular/ngDialog.min.css">
 <link rel="stylesheet" href="lib/angular/ngDialog-theme-default.min.css">
@@ -12,6 +13,8 @@
 <link rel="stylesheet" href="css/sidebar.css">
 
 <script	src="lib/angular/angular.min.js"></script>
+<script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+<script src="js/stateProviderConfig.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0mVAoqSKvKHy7BGXfngqTeJaFXpheQ54&language=en&libraries=places"></script>
 <script src="lib/maps/markerclusterer.js"></script>
 <script src="lib/angular/ngDialog.min.js"></script>
@@ -31,6 +34,17 @@
 						<h2 class="titlename">geoWorx</h2>
 					</div>
 				</div>
+
+				<!-- ///////////////////////// Main ui view -->
+				<nav class="nav nav-pills nav-justified">
+					<a class="nav-item nav-link active"ui-sref="profile" ui-sref-active="active">Profile</a>
+					<a class="nav-item nav-link" ui-sref="chat" ui-sref-active="active">chat</a>
+					<a class="nav-item nav-link" ui-sref="jobs" ui-sref-active="active">Jobs</a>
+					<a class="nav-item nav-link" ui-sref="settings" ui-sref-active="active">Settings</a>
+				</nav>
+
+				<ui-view></ui-view>
+				<!-- /////////////////////////// UI View ends -->
 				<div class="footer">
 					<button type="button" class="btn btn-primary btn-block" ng-click="addJob()">Add Job</button>
 				</div>

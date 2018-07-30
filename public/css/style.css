@@ -12,11 +12,6 @@ h1, h2, h3, h4, h5, h6, p, input {
   padding: 0px;
 }
 
-.pre-scrollable {
-    max-height: 340px;
-    overflow-y: scroll;
-}
-
 .content{
   display: flex;
   padding: 0px;

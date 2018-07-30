@@ -1,6 +1,36 @@
 
 //Angular App Module and Controller
-var mapApp = angular.module('mapApp', ['ngDialog']);
+var mapApp = angular.module('mapApp', ['ngDialog', 'ui.router']);
+
+mapApp.config(function($stateProvider) {
+    var profileState = {
+      name: 'profile',
+      url: '/profile',
+      template: '<h3>hello Profile!</h3>'
+    }
+  
+    var chatState = {
+      name: 'chat',
+      url: '/chat',
+      template: '<h3>chat</h3>'
+    }
+    var jobsState = {
+      name: 'jobs',
+      url: '/jobs',
+      template: '<h3>Jobs app!</h3>'
+    }
+    var settingsState = {
+      name: 'settings',
+      url: '/settings',
+      template: '<h3>Setting or anything</h3>'
+    }
+  
+    $stateProvider.state(profileState);
+    $stateProvider.state(chatState);
+    $stateProvider.state(jobsState);
+    $stateProvider.state(settingsState);
+});
+
 mapApp.controller('MapController', function ($scope, $http, ngDialog) {
 
     $scope.initMap = function(){
@@ -16,7 +46,6 @@ mapApp.controller('MapController', function ($scope, $http, ngDialog) {
             "Caltrain": [37.7789, -122.3917]
         };
         var center = locations["FirebaseHQ"];
-
         
         // Query radius
         var radiusInKm = 0.5;
